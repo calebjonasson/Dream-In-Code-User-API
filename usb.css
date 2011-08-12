@@ -1,0 +1,89 @@
+body{margin:0px; padding:0px;}
+a{
+    text-decoration:none;
+    color: #333;
+}
+a:hover{
+    color: #333;
+}
+.cwj_container:hover{
+    border: 1px solid #bbb;
+    background: #e2e2e2;
+    
+}
+.cwj_container{
+    width:280px;
+    margin:0px;
+    padding:0px;
+    height: 74px;
+    border: 1px solid #ccc;
+    background: #f2f2f2;
+    font:normal 13px arial,verdana,tahoma,sans-serif;
+    overflow: hidden;
+    -moz-border-radius-topleft:5px;
+    -webkit-border-top-left-radius:5px;
+}
+.cwj_name{
+    width: 110px;
+    margin-left: 5px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.cwj_pos_rep{
+    background: #6f8f52;
+}
+.cwj_neg_rep{
+    background: #c7172b;
+}
+.cwj_posts{
+    background: #00aeef;
+}
+.cwj_rep{
+    -moz-border-radius-topright:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-radius-topleft:5px;
+    -webkit-border-top-left-radius:5px;
+    margin: 0px 2px;
+    height: 18px;
+    width: 120px;
+    color: #fff;
+}
+.cwj_rep p{
+    text-align:center;
+    padding: 0px;
+    margin:1px;
+    font-weight: bold;
+}
+.cwj_photo{
+    -moz-border-radius-topleft:5px;
+    -webkit-border-top-left-radius:5px;
+    overflow:hidden;
+}
+.cwj_photo img{
+    margin: 2px;
+    border: 1px solid #ccc;
+    height: 50px;
+    width: 50px;
+    -moz-border-radius-topleft:5px;
+    -webkit-border-top-left-radius:5px;
+    
+}
+.cwj_top{
+    height: 56px;
+}
+.cwj_bottom{
+    height: 20px;
+}
+.cwj_top_right{
+    width:220px;
+}
+.cwj_img{
+    width: 100px;
+    margin-left: 2px;
+}
+.cwj_title{
+    font-size: 11px;
+}
+.left{float:left;}
+.right{float:right;}
+.clear{clear:both;}
