@@ -119,7 +119,7 @@ class UserBadge
                             
                             <div class="cwj_name left">'.$this->name.'</div>
                             <div class="cwj_img right">
-                                <img src="'.$this->loadGroupImage().'">
+                                '.$var = ($this->loadGroupImage() != '' ? '<img src="'.$this->loadGroupImage().'">' : '').'
                             </div>
                             <div class="clear"></div>
                             <div class="cwj_title">
@@ -156,6 +156,12 @@ class UserBadge
                 break;
             case 'Expert' :
                 return 'http://cdn2.dreamincode.net/dreamincode/forums/public/style_extra/group_icons/expert_group.gif.pagespeed.ce.FoAO90i5Rq.gif';
+                break;
+            case 'Author' :
+                return 'http://cdn2.dreamincode.net/dreamincode/forums/public/style_extra/group_icons/author_group.gif.pagespeed.ce.mwMUIrHI0a.gif';
+                break;
+            case 'Author w/DIC++' :
+                return 'http://cdn2.dreamincode.net/dreamincode/forums/public/style_extra/group_icons/author_group.gif.pagespeed.ce.mwMUIrHI0a.gif';
                 break;
             case 'Contributors';
                 return 'http://cdn2.dreamincode.net/dreamincode/forums/public/style_extra/group_icons/contributor_group.gif.pagespeed.ce.Qg1-UpavDq.gif';
