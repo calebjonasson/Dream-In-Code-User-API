@@ -45,16 +45,14 @@ class UserBadge
         //set the url
         $url = 'http://www.dreamincode.net/forums/xml.php?showuser='.$this->userNid;
         
-        //get the contents of the xml
-        if(!$xml = file_get_contents($url))
+        //load in the xml file and create an obj.
+        try
         {
-            die('unable to load xml : '.__LINE__);
-        }
-        
-        //create the xml object to work with.
-        if(@!$xml = new SimpleXMLElement($xml))
+            $xml = file_get_contents($url);
+            $xml = new SimpleXMLElement($xml);
+        }catch(Exception $e)
         {
-            die('unable to create xml object : '.__LINE__);
+            die("XML load error: $e.");
         }
         
         //If we have gotten this far we know that we do have an xml file loaded.
@@ -86,6 +84,8 @@ class UserBadge
          * This function is going to check the size that is passed set the value
          * of the size accordingly.
          */
+        $arr = array('usb', 'ulb', 'ust', 'ult');
+        
     }
     public function __print()
     {
