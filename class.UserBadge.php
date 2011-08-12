@@ -34,7 +34,7 @@ class UserBadge
     
     
     //construct
-    public function __construct($user_nid)
+    public function __construct($user_nid, $size = '')
     {
         //set the user nid.
         $this->userNid = $user_nid;
@@ -71,6 +71,8 @@ class UserBadge
         $this->reputation = (string)$xml->profile[0]->reputation;
         $this->group = (string)$xml->profile[0]->group[0]->span;
         
+        //remove the xml variable.
+        unset($xml);
         
         //TODO
         $this->size = 'usb';
@@ -78,6 +80,13 @@ class UserBadge
     
     
     //function
+    public function checkSize()
+    {
+        /**
+         * This function is going to check the size that is passed set the value
+         * of the size accordingly.
+         */
+    }
     public function __print()
     {
         /**

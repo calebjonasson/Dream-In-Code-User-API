@@ -17,15 +17,25 @@
  * 
  */
 
+//local variables.
+$size = "";
 
-
-
+//check for the id.
 if(isset($_GET['id']) && is_numeric($_GET['id']))
 {
+    //bring in the userbadge class
     require_once('class.UserBadge.php');
     
-    $user = new UserBadge($_GET['id']);
+    //check to see if a size is set.
+    if(isset($_GET['s']))
+    {
+        $size = $_GET['s'];
+    }
     
+    //create the new object and pass required var to it.
+    $user = new UserBadge($_GET['id'], $size);
+    
+    //if loaded : display
     if($user->userLoaded)
     {
         //echo $user->__print();
@@ -34,8 +44,10 @@ if(isset($_GET['id']) && is_numeric($_GET['id']))
     
 }else{
     
-    echo '<iframe scrolling="no" style="width: 284px;height: 78px;border: none;"src="http://atomicbucket.com/dreamincode/?id=34"></iframe>';
+    echo '<p>Looks like you are trying to access the dream in code widget improperly.
+    Please read through the documentation on github.<a href="https://github.com/calebjonasson/Dream-In-Code-User-API/wiki">HERE!</a></p>';
     
+    echo '<iframe scrolling="no" style="width: 284px;height: 78px;border: none;" src="http://atomicbucket.com/dreamincode/?id=175017"></iframe>';
 }
 
 
