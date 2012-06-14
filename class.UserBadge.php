@@ -4,7 +4,6 @@
  * This class is going to load the user information based on the values passed
  * into the constructor of the class.
  */
-
 class UserBadge
 {
     
@@ -22,8 +21,6 @@ class UserBadge
     public $reputation;
     public $group;
     
-    
-    
     //booleans
     public $userLoaded = false;
     
@@ -31,7 +28,9 @@ class UserBadge
     public $size;
     
     /**
+     * Basic constructor. Will initialize the pull of content from dreamincode.net
      * @param integer $userNid the users Id.
+     * @todo move the general pulling of information into a service class.
      */
     public function __construct($userNid, $size = '')
     {
