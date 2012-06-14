@@ -30,17 +30,16 @@ class UserBadge
     //display values
     public $size;
     
-    
-    
-    
-    //construct
-    public function __construct($user_nid, $size = '')
+    /**
+     * @param integer $userNid the users Id.
+     */
+    public function __construct($userNid, $size = '')
     {
         //set the user nid.
-        $this->userNid = $user_nid;
+        $this->userNid = $userNid;
         
         //unset the user_nid
-        unset($user_nid);
+        unset($userNid);
         
         //set the url
         $url = 'http://www.dreamincode.net/forums/xml.php?showuser='.$this->userNid;
@@ -59,15 +58,15 @@ class UserBadge
         $this->userLoaded = true;
         
         //load user values.
-        $this->posts = (string)$xml->profile[0]->posts;
-        $this->photo = (string)$xml->profile[0]->photo;
-        $this->name = (string)$xml->profile[0]->name;
-        $this->joined = (string)$xml->profile[0]->joined;
-        $this->views = (string)$xml->profile[0]->views;
-        $this->postsPerDay = (string)$xml->profile[0]->postsperday;
-        $this->title = (string)$xml->profile[0]->title;
-        $this->reputation = (string)$xml->profile[0]->reputation;
-        $this->group = (string)$xml->profile[0]->group[0]->span;
+        $this->posts        = (string)$xml->profile[0]->posts;
+        $this->photo        = (string)$xml->profile[0]->photo;
+        $this->name         = (string)$xml->profile[0]->name;
+        $this->joined       = (string)$xml->profile[0]->joined;
+        $this->views        = (string)$xml->profile[0]->views;
+        $this->postsPerDay  = (string)$xml->profile[0]->postsperday;
+        $this->title        = (string)$xml->profile[0]->title;
+        $this->reputation   = (string)$xml->profile[0]->reputation;
+        $this->group        = (string)$xml->profile[0]->group[0]->span;
         
         //remove the xml variable.
         unset($xml);
@@ -77,7 +76,9 @@ class UserBadge
     }
     
     
-    //function
+    /**
+     * @todo fill out the size and adjust accordingly.
+     */
     public function checkSize()
     {
         /**
@@ -87,6 +88,9 @@ class UserBadge
         $arr = array('usb', 'ulb', 'ust', 'ult');
         
     }
+    /**
+     * Display the contents of the class.
+     */
     public function __print()
     {
         /**
@@ -97,6 +101,10 @@ class UserBadge
         echo '</pre>';
     }
     
+    /**
+     * @return string returns the html to be displayed.
+     * @todo move this into a specific view class that is abstract of a main view.
+     */
     public function display()
     {
         //Check the type of display and return proper values.
@@ -145,6 +153,11 @@ class UserBadge
             
         }
     }
+    
+    /**
+     * Load the group images that the user belongs to.
+     * @return string the image link for the specific users group.
+     */
     private function loadGroupImage()
     {
         
